@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:backgroundTint="@color/colorGreen"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+         app:contentPadding="12dp"
+                app:cardUseCompatPadding="true"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorGreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:id="@+id/symptomImage"
+                        android:layout_width="0dp"
+                        android:tint="@color/colorGreenDark"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="32dp"
+                        android:src="@drawable/ic_done_all_black_24dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/diseaseTxtView"
+                        android:textColor="@android:color/white"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.18"
+                        app:layout_constraintStart_toEndOf="@id/symptomImage"
+                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                        android:id="@+id/snakecausingtxt"
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="@color/colorGreenDark"
+                        app:layout_constraintTop_toBottomOf="@id/diseaseTxtView"
+                        android:layout_marginTop="16dp"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Caused By :"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/snakecausingtxt"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways"
+
+                app:tabMode="auto">
+
+            <com.google.android.material.tabs.TabItem
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Symptoms" />
+
+            <com.google.android.material.tabs.TabItem
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Treatment" />
+
+            <com.google.android.material.tabs.TabItem
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Pharmacy" />
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.fragments.ResultsFragment">
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/daynamicRecycler"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
